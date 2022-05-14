@@ -44,3 +44,20 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## 配置 eslint、prettier、commitlint 配置
+
+1.yarn add --dev --exact prettier；echo {}> .prettierrc.json; 2.创建.prettierignore；添加 build coverage 内容
+3.npx mrm lint-staged;
+package: "lint-staged": {
+"\*.{js,css,md, ts, tsx}": "prettier --write"
+};
+yarn add eslint-config-prettier;
+package: "eslintConfig": {
+"extends": [
+"react-app",
+"react-app/jest",
+"prettier"
+]
+},
+@commitlint/cli @commitlint/config-conventional
